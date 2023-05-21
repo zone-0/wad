@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>EXAM DASHBOARD</title>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/dataTables.bootstrap5.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+</head>
+
+<body>
+
+
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/jquery-3.5.1.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
+  <script src="./js/jquery.dataTables.min.js"></script>
+  <script src="./js/dataTables.bootstrap5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <script src="./js/script.js"></script>
+ 
+  <!--Navbar-->
+
+
+  <nav class="navbar navbar-expand-lg fixed-top asch">
+    <div class="container-fluid">
+
+      <button class="navbar-toggler me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+        aria-controls="offcanvasExample">
+        <span class="navbar-toggler-icon" data-bs-target="#offcanvasExample" style="color: white;"><i class="bi bi-list"></i></span>
+      </button>
+
+      <a class="navbar-brand fw-bold text-uppercase me-auto" href="#">HNP</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="color:rgb(255, 255, 255);"><i class="bi bi-list"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <form class="d-flex ms-auto" role="search">
+          <div class="input-group my-3 my-lg-0">
+            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username"
+              aria-describedby="button-addon2">
+            <button class="btn btn-primary" type="button" id="button-addon2"><i class="bi bi-search"></i></button>
+          </div>
+        </form>
+
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" ><i class="bi bi-person-circle"></i></a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+
+  <!--Navbar-->
+
+
+  <!--Sidebar-->
+
+
+  <div class="offcanvas offcanvas-start text-white sidebar-nav" tabindex="-1" id="offcanvasExample"
+    aria-labelledby="offcanvasExampleLabel" style="background-color:#01203E;">
+
+    <div class="offcanvas-body p-0">
+      <nav class="navbar-dark">
+        <ul class="navbar-nav">
+          <li>
+            <div class="text-muted small fw-bold text-uppercase px-3 text-white">
+              <span class="text-white">CORE</span>
+            </div>
+          </li>
+          <li>
+            <a href="#" class="nav-link px-3 active text-white">
+              <span class="me-2">
+                <i class="bi bi-speedometer2"></i>
+              </span>
+              <span class="text-white">ADMIN</span>
+            </a>
+          </li>
+          <li class="my-4">
+            <hr class="dropdown-divider" />
+          </li>
+
+          <li>
+            <div class="text-muted small fw-bold text-uppercase px-3 mb-1 text-white">
+              <span class="text-white">INTERFACE</span>
+            </div>
+          </li>
+          <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#collapseExample1" role="button"
+            aria-expanded="false" aria-controls="collapseExample">
+            <span class="me-2 "><i class="bi bi-building"></i></span>
+            <span class="text-white">Question Paper</span>
+            <span class="right-icon ms-auto"></span>
+            <span><i class="bi bi-chevron-bar-down"></i></span>
+          </a>
+
+          <div class="collapse" id="collapseExample1">
+            <div>
+              <ul class="navbar-nav ps-3">
+                <li>
+                  <a href="#" class="nav-link">
+                    <span class="me-2">
+                      <span class="me-2 px-3"><i class="bi bi-layout-text-window-reverse"></i></span>
+                      <span class="text-white">2021</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link">
+                    <span class="me-2">
+                      <span class="me-2 px-3"><i class="bi bi-layout-text-window-reverse"></i></span>
+                      <span class="text-white">2022</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link">
+                    <span class="me-2">
+                      <span class="me-2 px-3"><i class="bi bi-layout-text-window-reverse"></i></span>
+                      <span class="text-white">2023</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <li>
+            <a class="nav-link px-3 sidebar-link">
+              <span class="me-2"><i class="bi bi-card-checklist"></i></span>
+              <span class="text-white">Question Bank</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="nav-link px-3">
+              <span class="me-2">
+                <i class="bi bi-calendar-check"></i>
+              </span>
+              <span class="text-white">Exam Scheduler</span>
+            </a>
+          </li>
+
+
+
+          <a href="#" class="nav-link px-3 sidebar-link">
+            <span class="me-2"><i class="bi bi-person-fill-gear"></i></span>
+            <span class="text-white">CANDIDATES</span>
+          </a>
+
+
+          <a href="#" class="nav-link px-3 sidebar-link">
+            <span class="me-2"><i class="bi bi-pencil-square"></i></span>
+            <span class="text-white">EDIT DASHBOARD</span>
+          </a>
+
+
+
+          <li class="my-4">
+            <hr class="dropdown-divider" />
+          </li>
+
+
+          <li>
+            <div class="text-muted small fw-bold text-uppercase px-3 mb-1">
+              <span class="text-white">UNIVERSITY</span>
+            </div>
+          </li>
+          <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#collapseExample" role="button"
+            aria-expanded="false" aria-controls="collapseExample">
+            <span class="me-2"><i class="bi bi-building"></i></span>
+            <span class="text-white">RESULTS</span>
+            <span class="right-icon ms-auto"></span>
+            <span><i class="bi bi-chevron-bar-down"></i></span>
+          </a>
+
+          <div class="collapse" id="collapseExample">
+            <div>
+              <ul class="navbar-nav ps-3">
+                <li>
+                  <a href="#" class="nav-link">
+                    <span class="me-2">
+                      <span class="me-2 px-3"><i class="bi bi-layout-text-window-reverse"></i></span>
+                      <span class="text-white">EDIT</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+
+
+          <li>
+            <a href="#" class="nav-link px-3">
+              <span class="me-2">
+                <i class="bi bi-chat-left-dots"></i>
+              </span>
+              <span class="text-white">COMMUNICATION</span>
+            </a>
+          </li>
+
+
+          <li>
+            <a href="#" class="nav-link px-3">
+              <span class="me-2">
+                <i class="bi bi-buildings-fill"></i>
+              </span>
+              <span class="text-white">COLLEGE</span>
+            </a>
+          </li>
+
+          <li class="my-4">
+            <hr class="dropdown-divider" />
+          </li>
+
+
+    </div>
+    </li>
+
+    </ul>
+    </nav>
+
+  </div>
+  </div>
+
+
+  <!--Sidebar-->
+
+
+  <!--Right Side to Side Bar-->
+
+
+
+  <main class="mt-5 pt-3">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="'col-md-12 fw-bold fs-3 px-3" style="text-align: center;">DASHBOARD</div>
+      </div>
+
+
+
+      <!--Card -->
+
+
+      <div class="row mt-2 mycard aa">
+
+        <div class="col-md-4 mb-2 mycard are aa">
+          <div class="card pp text-white bg-success mb-3 h-100 aa">
+            <div class="card-header">
+              <h5>
+                <p class="text-center">EXAM</p>
+              </h5>
+            </div>
+            <div class="card-body">
+
+              <p class="card-text">
+              <ol>
+                <li>
+                  Unit Test-Exam Starts From 27<sup>t</sup><sup>h</sup> February 2023
+                </li>
+                <li>
+                  Insem-Exam Starts From 20<sup>t</sup><sup>h</sup> March 2023
+                </li>
+                <li>
+                  EndSem-Exam Starts From 10<sup>t</sup><sup>h</sup> May 2023
+                </li>
+              </ol>
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-4 mb-2">
+          <div class="card text-white bg-primary mb-3 h-100">
+            <div class="card-header">
+              <h5>
+                <p class="text-center">NOTICES</p>
+              </h5>
+            </div>
+            <div class="card-body">
+
+              <p class="card-text">
+              <ol>
+                <li>
+                  Fill MahaDBT Scholorship Forms Before of 31<sup>s</sup><sup>t</sup> March 2023
+                </li>
+                <li>
+                  Even Sem For TE-BE Starts from 23<sup>r</sup><sup>d</sup> January 2023
+                </li>
+
+              </ol>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-2">
+          <div class="card text-white bg-warning mb-3 h-100">
+            <div class="card-header">
+              <h5>
+                <p class="text-center">IMPORTANT LINKS</p>
+              </h5>
+            </div>
+            <div class="card-body">
+
+              <p class="card-text">
+              <ol>
+                <li>
+                  <a href="#" class="link-primary text-white">MAHADBT INSTITUTE LOGIN</a>
+                </li>
+                <li>
+                  <a href="#" class="card-link text-white">PICT ADMIN LOGIN</a>
+                </li>
+                <li>
+                  <a href="#" class="card-link text-white">SPPU FACULTY LOGIN</a>
+                </li>
+              </ol>
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header fw-bold" style="text-align: center;text-decoration: double; background-color: gold;">
+              PASSING RATE
+            </div>
+            <div class="card-body">
+              <canvas id="barChart" style="width:100%;max-width:600px;"></canvas>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 h-100" style="height: auto;">
+          <div class="card">
+            <div class="card-header fw-bold" style="text-align: center;text-decoration:double;background-color: gold;">
+              PLACEMENT RATE
+            </div>
+            <div class="card-body h-100">
+              <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+
+  <!--Card -->
+
+
+  <!--Chart-->
+
+
+
+  <script>
+    var xValues = ["M3", "PA", "CG", "DBMS", "SE"];
+    var yValues = [95, 80, 90, 95, 85];
+    var barColors = ["red", "green", "blue", "orange", "brown"];
+
+    new Chart("barChart", {
+      type: "bar",
+      data: {
+        labels: xValues,
+        datasets: [{
+          fill: false,
+          lineTension: 0,
+          backgroundColor: barColors,
+          borderColor: "rgba(0,0,255,0.1)",
+          data: yValues
+        }]
+      },
+      options: {
+        legend: { display: false },
+        scales: {
+          yAxes: [{ ticks: { min: 0 } }],
+        }
+      }
+    });
+
+
+    var xValues = [2018, 2019, 2020, 2021, 2022];
+    var yValues = [423, 536, 486, 630, 719];
+
+    new Chart("myChart", {
+      type: "line",
+      data: {
+        labels: xValues,
+        datasets: [{
+          fill: false,
+          lineTension: 0,
+          backgroundColor: "rgba(0,0,255,1.0)",
+          borderColor: "rgba(0,0,255,0.1)",
+          data: yValues
+        }]
+      },
+      options: {
+        legend: { display: false },
+        scales: {
+          yAxes: [{ ticks: { min: 400, max: 850 } }],
+        }
+      }
+    });
+
+  </script>
+
+
+
+  <!--Chart-->
+
+
+  <!--Right Side To Sidebar-->
+
+
+</body>
+
+</html>
+<!--#35af87-->
